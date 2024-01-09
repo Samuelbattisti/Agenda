@@ -12,15 +12,15 @@
                         <div class="col-lg">
                             <h3>Login:</h3>
                             <p>Ja tem conta? Faça login!</p>
-                            <form action="/login/login">
+                            <form action="/login/login" method="POST">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="mb-3">
-                                    <label for="inputEmail" class="form-label">Email:</label>
+                                    <label for="inputEmailLogin" class="form-label">Email:</label>
                                     <input type="email" name="email" class="form-control" id="inputEmailLogin"
                                         placeholder="Seu email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="InputPassword" class="form-label">Senha:</label>
+                                    <label for="inputPasswordLogin" class="form-label">Senha:</label>
                                     <input type="password" name="password" class="form-control" id="inputPasswordLogin"
                                         placeholder="Sua senha">
                                 </div>
@@ -35,12 +35,12 @@
                             <form action="/login/register" method="POST">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <div class="mb-3">
-                                    <label for="inputEmail" class="form-label">Email:</label>
+                                    <label for="inputEmailRegister" class="form-label">Email:</label>
                                     <input type="email" name="email" class="form-control" id="inputEmailRegister"
                                         placeholder="Seu email">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="InputPassword" class="form-label">Senha:</label>
+                                    <label for="inputPasswordRegister" class="form-label">Senha:</label>
                                     <input type="password" name="password" class="form-control" id="inputPasswordRegister"
                                         placeholder="Sua senha">
                                 </div>
