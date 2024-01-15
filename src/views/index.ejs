@@ -1,54 +1,73 @@
 <%- include('includes/head') %>
     <%- include('includes/nav') %>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 my-4">
-
-                    <h1 class="display-4 text-center">Sua agenda!</h1>
-                    <h4 class="display-5 my-2 text-center"> Seus contatos abaixo: </h4>
-
+        <% if(user){ %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 my-4">
+                        <h1 class="text-center">Sua agenda!</h1>
+                        <h4 class="my-2 text-center"> Seus contatos abaixo: </h4>
+                    </div>
                 </div>
+                <%- include('includes/messages') %>
+                    <div class="responsive-table">
+                        <% if(contatos.length> 0){ %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Sobrenome</th>
+                                        <th scope="col">Telefone</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Editar</th>
+                                        <th scope="col">Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% contatos.forEach(contato=> {%>
+                                        <tr>
+                                            <td>
+                                                <%= contato.nome %>
+                                            </td>
+                                            <td>
+                                                <%= contato.sobrenome %>
+                                            </td>
+                                            <td>
+                                                <%= contato.telefone %>
+                                            </td>
+                                            <td>
+                                                <%= contato.email %>
+                                            </td>
+                                            <td><a class="text-primary" href="/contato/index/<%= contato._id %>">Editar
+                                                    contato</a></td>
+                                            <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir
+                                                    contato</a></td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                    </div>
+                    <%} else { %>
+                        <h4 class="text-center">Não existem contatos na sua agenda!</h4>
+                        <%} %>
             </div>
-            <%- include('includes/messages')  %>
-
-            <div class="responsive-table">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Sobrenome</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Samuel</td>
-                            <td>Battisti</td>
-                            <td>1234</td>
-                            <td>samuel@samuel.com</td>
-                        </tr>
-                        <tr>
-                            <td>Samuel</td>
-                            <td>Battisti</td>
-                            <td>1234</td>
-                            <td>samuel@samuel.com</td>
-                        </tr>
-                        <tr>
-                            <td>Samuel</td>
-                            <td>Battisti</td>
-                            <td>1234</td>
-                            <td>samuel@samuel.com</td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-            <div class="col-lg-2"></div>
-
-        </div>
-
-
-        <%- include('includes/footer') %>
+            <% }else{ %>
+                <div class="container-fluid p-0">
+                    <div class="jumbotron jumbotron-fluid bg-warning text-white">
+                        <div class="container">
+                            <div class="row home-texts">
+                                <div class="col-md-6 mt-5 mb-3">
+                                    <h1 class="display-4">Sua Agenda!</h1>
+                                    <p class="lead">Descubra o Poder da Organização com Sua Agenda! Seu Guia
+                                        Personalizado para uma Vida Mais Produtiva e Conectada aos Seus Objetivos.</p>
+                                    <a href="/login/index"> <button type="submit"
+                                            class="btn bg-light text-warning btn-lg">Criar conta</button></a>
+                                </div>
+                                <div class="col-md-6 img-home mb-5">
+                                    <img src="/assets/img/suaAgendaImg.png" alt="Imagem" class="img-fluid ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <%- include('includes/footer') %>
