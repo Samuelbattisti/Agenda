@@ -3,66 +3,64 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 my-4">
-                    <h1 class="display-4 text-center">Login</h1>
+                <div class="col-lg-12 my-4">
+                    <h1 class="display-4 text-center">Login | Cadastro</h1>
                     <h4 class="display-5 my-2 text-center">Faça login ou crie sua conta!</h4>
                     <%- include('includes/messages'); %>
-                    <div class="row">
-                        <div class="col">
-                            <div class="alert alert-danger hide" id="alert-front">
-                                <p class="text-center">Dados inválidos!</p>
+                        <div id="alert-front" class="col-md-12 text-center alert alert-danger  mt-2 mb-2 hide">
+                            <p id="invalid-email" class="text-danger hide">Email Inválido!</p>
+                            <p id="invalid-password"  class="text-danger hide">Senha Inválida!</p>
+                        </div>
+                   
+                        
+                 
+                        <div class="row my-5">
+                            <div class="col-lg ">
+                                <h3>Login:</h3>
+                                <p>Ja tem conta? Faça login!</p>
+
+                                <form class="formLogin" action="/login/login" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <div class="mb-3">
+                                        <label for="inputEmailLogin" class="form-label">Email:</label>
+                                        <input type="email" name="email" class="form-control" id="inputEmailLogin"
+                                            placeholder="Seu email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputPasswordLogin" class="form-label">Senha:</label>
+                                        <input type="password" name="password" class="form-control"
+                                            id="inputPasswordLogin" placeholder="Sua senha">
+                                    </div>
+                                    <button type="submit" class="btn bg-light text-warning ">Enviar</button>
+                                </form>
+                            </div>
+
+                            <div class="col-lg ">
+                                <h3>Registre-se:</h3>
+                                <p>Você não tem uma conta ainda? Crie aqui para acessar a sua agenda!</p>
+                                <form class="formCadastro " action="/login/register" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <div class="mb-3">
+                                        <label for="inputEmailRegister" class="form-label">Email:</label>
+                                        <input type="email" name="email" class="form-control" id="inputEmailRegister"
+                                            placeholder="Seu email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputPasswordRegister" class="form-label">Senha:</label>
+                                        <input type="password" name="password" class="form-control"
+                                            id="inputPasswordRegister" placeholder="Sua senha">
+                                    </div>
+                                    <button type="submit" class="btn bg-light text-warning ">Criar conta</button>
+                                </form>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="row my-5">
-                        <div class="col-lg ">
-                            <h3>Login:</h3>
-                            <p>Ja tem conta? Faça login!</p>
-                            <form class="formLogin" action="/login/login" method="POST">
-                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                <div class="mb-3">
-                                    <label for="inputEmailLogin" class="form-label">Email:</label>
-                                    <input type="email" name="email" class="form-control" id="inputEmailLogin"
-                                        placeholder="Seu email">
-                                     
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputPasswordLogin" class="form-label">Senha:</label>
-                                    <input type="password" name="password" class="form-control" id="inputPasswordLogin"
-                                        placeholder="Sua senha">
-                                      
-                                </div>
-                                <button type="submit" class="btn bg-light text-warning ">Enviar</button>
-                            </form>
-                        </div>
-
-                        <div class="col-lg ">
-                            <h3>Registre-se:</h3>
-                            <p>Você não tem uma conta ainda? Crie aqui para acessar a sua agenda!</p>
-                            <form class="formCadastro " action="/login/register" method="POST">
-                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                <div class="mb-3">
-                                    <label for="inputEmailRegister" class="form-label">Email:</label>
-                                    <input type="email" name="email" class="form-control" id="inputEmailRegister"
-                                        placeholder="Seu email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputPasswordRegister" class="form-label">Senha:</label>
-                                    <input type="password" name="password" class="form-control" id="inputPasswordRegister"
-                                        placeholder="Sua senha">
-                                </div>
-                                <button type="submit" class="btn bg-light text-warning ">Criar conta</button>
-                            </form>
-
-                        </div>
-                    </div>
                 </div>
             </div>
 
 
 
-            <div class="col-lg-2"></div>
+
 
         </div>
 

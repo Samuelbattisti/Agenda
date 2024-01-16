@@ -10,4 +10,3 @@ const cadastro = new Login('.formCadatro')
   
 login.init();
 cadastro.init()
-

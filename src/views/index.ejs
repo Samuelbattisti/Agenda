@@ -51,8 +51,12 @@
                         <%} %>
             </div>
             <% }else{ %>
+
                 <div class="container-fluid p-0">
                     <div class="jumbotron jumbotron-fluid bg-warning text-white">
+                        <div class="container">
+                            <div class="col-md-12"> <%- include('includes/messages') %></div>
+                        </div>
                         <div class="container">
                             <div class="row home-texts">
                                 <div class="col-md-6 mt-5 mb-3">
@@ -70,4 +74,4 @@
                     </div>
                 </div>
                 <% } %>
-                <%- include('includes/footer') %>
+                    <%- include('includes/footer') %>
