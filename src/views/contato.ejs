@@ -8,36 +8,39 @@
                     <h1 class="display-4 text-center">Sua agenda!</h1>
                     <h4 class="display-5 my-2 text-center">Crie e edite seus contatos abaixo:</h4>
                     <%- include('includes/messages') %>
-                    
-                        <% if (contato._id) {%>
-                            <form action="/contato/edit/<%= contato._id%>" method="POST">
-                                <% } else {%>
-                                    <form action="/contato/register" method="POST">
-                                <% }%>
-                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                        <div class="mb-3">
-                                            <label for="inputNome" class="form-label">Nome:</label>
-                                            <input type="text" value="<%= contato.nome %>" name="nome"
-                                                class="form-control" id="inputNome">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="inputSobrenome" class="form-label">Sobrenome:</label>
-                                            <input type="text" value="<%= contato.sobrenome %>" name="sobrenome"
-                                                class="form-control" id="inputSobrenome">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="inputEmail" class="form-label">Email:</label>
-                                            <input type="email" value="<%= contato.email %>" name="email"
-                                                class="form-control" id="inputEmail">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="inputTelefone" class="form-label">Telefone:</label>
-                                            <input type="tel" value="<%= contato.telefone %> " name="telefone"
-                                                class="form-control" id="inputTelefone">
-                                        </div>
 
-                                        <button type="submit" class="btn bg-light text-warning btn-lg">Cadastrar</button>
-                            </form>
+                        <% if (contato._id) {%>
+                            <form action="/contato/edit/<%= contato._id%>"class="formEditContact
+                                " method="POST">
+                                <% } else {%>
+                                    <form action="/contato/register" class="formRegistrationContact
+                                    " method="POST">
+                                        <% }%>
+                                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                            <div class="mb-3">
+                                                <label for="inputNome" class="form-label">Nome:</label>
+                                                <input type="text" value="<%= contato.nome %>" name="nome"
+                                                    class="form-control" id="inputNome">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="inputSobrenome" class="form-label">Sobrenome:</label>
+                                                <input type="text" value="<%= contato.sobrenome %>" name="sobrenome"
+                                                    class="form-control" id="inputSobrenome">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="inputEmail" class="form-label">Email:</label>
+                                                <input type="email" value="<%= contato.email %>" name="email"
+                                                    class="form-control" id="inputEmail">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="inputTelefone" class="form-label">Telefone:</label>
+                                                <input type="tel" value="<%= contato.telefone %> " name="telefone"
+                                                    class="form-control" id="inputTelefone">
+                                            </div>
+
+                                            <button type="submit"
+                                                class="btn bg-light text-warning btn-lg">Cadastrar</button>
+                                    </form>
 
                 </div>
             </div>

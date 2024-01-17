@@ -1,44 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&family=Noto+Sans:wght@200;500&display=swap');
-*{
+
+* {
     font-family: 'Inter', sans-serif;
     font-family: 'Noto Sans', sans-serif;
     color: white;
-}   
-
-
-.error{
+}
+:root {
+    --color-warning: #FFC107;
+  }
+.error {
     border: 1px solid red;
 }
-.hide{
+
+.hide {
     display: none;
 }
-.show{
+
+.show {
     display: block;
 }
 
 
 
 /* texts */
-.nav-link:hover{
+.nav-link:hover {
     opacity: 0.5;
     transition: 1s;
 }
 
-h1{
+h1 {
     font-weight: 200;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+label {
+    font-size: 1.2rem;
+}
+input{
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.4); 
+}
+
+/*Forms*/
+.forms  {
+    outline: none;
+   
+}
+.forms input {
+    color: var(--color-warning);
+   
+}
+.forms input:focus{
+    color: var(--color-warning);
+}
+/*Form Login*/
+.formLogged {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin: 0.5rem;
+
+}
+
+.formLogged input {
+    border: 1px solid white;
+}
+.formLogged input::placeholder {
+    color: var(--color-warning)
+}
+.formLogged input:focus {
+    box-shadow: 0 0 5px 2px white;
+    border: var(--color-warning)
+}
+/*Form registrar*/
+.formRegister {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+.formRegister input {
+    border: 1px solid var(--color-warning);
+}
+
+.formRegister input::placeholder {
+    color: var(--color-warning);
+}
+
+.formRegister input:focus {
+    box-shadow: 0 0 5px 2px var(--color-warning);
+    border: var(--color-warning);
+}
+/*Form cadastro de contato*/
+.formRegistrationContact input, .formEditContact input{
+    color: var(--color-warning);
+}
+.formRegistrationContact input:focus, .formEditContact input:focus{
+    box-shadow: 0 0 5px 2px white;
+    border: white;
+    color: var(--color-warning);
 }
 
 
 /* HomePage */
-.home-texts{
+.home-texts {
     margin-top: 15vh;
 }
 
-.jumbotron{
+.jumbotron {
     height: 100vh;
 
 }
+
 .img-home img {
     max-width: 100%;
     height: auto;
-  }
+}

@@ -14,8 +14,8 @@
                    
                         
                  
-                        <div class="row my-5">
-                            <div class="col-lg ">
+                        <div class="row my-5 forms">
+                            <div class="col-lg formLogged">
                                 <h3>Login:</h3>
                                 <p>Ja tem conta? Faça login!</p>
 
@@ -35,22 +35,22 @@
                                 </form>
                             </div>
 
-                            <div class="col-lg ">
-                                <h3>Registre-se:</h3>
-                                <p>Você não tem uma conta ainda? Crie aqui para acessar a sua agenda!</p>
+                            <div class="col-lg formRegister">
+                                <h3 class="text-warning">Registre-se:</h3>
+                                <p class="text-warning">Você ainda não tem conta? Crie para acessar a sua agenda!</p>
                                 <form class="formCadastro " action="/login/register" method="POST">
                                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                     <div class="mb-3">
-                                        <label for="inputEmailRegister" class="form-label">Email:</label>
+                                        <label for="inputEmailRegister" class="form-label text-warning">Email:</label>
                                         <input type="email" name="email" class="form-control" id="inputEmailRegister"
                                             placeholder="Seu email">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputPasswordRegister" class="form-label">Senha:</label>
+                                        <label for="inputPasswordRegister" class="form-label text-warning">Senha:</label>
                                         <input type="password" name="password" class="form-control"
                                             id="inputPasswordRegister" placeholder="Sua senha">
                                     </div>
-                                    <button type="submit" class="btn bg-light text-warning ">Criar conta</button>
+                                    <button type="submit" class="btn bg-warning text-white ">Criar conta</button>
                                 </form>
 
                             </div>
