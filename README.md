@@ -106,7 +106,7 @@ Espero que este guia seja útil para o desenvolvimento, teste e implementação 
 
 ### Sugestões e Melhorias
 
-Este projeto está em constante evolução, e aceito sugestões para melhorias. Caso tenha ideias, correções ou novos recursos que gostaria de sugerir, sinta-se à vontade para abrir uma [issue]((https://github.com/Samuelbattisti/Agenda/issues) ou enviar um [pull request](https://github.com/Samuelbattisti/Agenda.git). Sua contribuição é valiosa para o crescimento contínuo deste projeto.
+Este projeto está em constante evolução, e aceito sugestões para melhorias. Caso tenha ideias, correções ou novos recursos que gostaria de sugerir, sinta-se à vontade para abrir uma [issue](https://github.com/Samuelbattisti/Agenda/issues) ou enviar um [pull request](https://github.com/Samuelbattisti/Agenda.git). Sua contribuição é valiosa para o crescimento contínuo deste projeto.
 
 Espero que desfrute utilizando o projeto Agenda e estamos ansiosos para receber suas sugestões!
 
